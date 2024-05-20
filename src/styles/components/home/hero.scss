@@ -1,0 +1,54 @@
+.hero {
+  background-color: var(--light-grey);
+  padding: 90px 10% 100px 10%;
+  .heroWrapper {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    h3,
+    p {
+      font-size: 2.5em;
+      color: var(--white);
+    }
+    .heroSearch {
+      width: 100%;
+      background-color: var(--white);
+      height: fit-content;
+      border-radius: 20px;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      .searchRight {
+        padding: 5px 0 5px 10px;
+        width: 97%;
+        select {
+          padding: 0 10px 0 5px;
+          color: var(--light-grey);
+          border: none;
+          border-right: 1px solid var(--light-grey);
+          outline: none;
+          cursor: pointer;
+        }
+
+        input {
+          padding: 0 10px 0 5px;
+          width: 45%;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          ::placeholder {
+            color: var(--v-light-grey);
+          }
+        }
+      }
+      .searchIcon {
+        padding: 9px;
+        background-color: var(--green);
+        border-radius: 50%;
+        color: var(--white);
+        font-size: 1em;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.homeNavbar {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid var(--blue);
+  font-family: var(--secondary-font);
+  background-color: var(--white);
+  z-index: 1000;
+
+  .navbarTop {
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10% 5px 10%;
+
+    .logo {
+      height: 100%;
+    }
+    .searchbar {
+      width: 300px;
+      background-color: var(--white);
+      box-shadow: var(--shadow1);
+      padding: 2px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      input {
+        padding: 0 15px;
+        width: 90%;
+        border: none;
+        outline: none;
+      }
+      .searchIcon {
+        padding: 7px;
+        background-color: var(--green);
+        border-radius: 50%;
+        color: var(--white);
+        font-size: 0.9em;
+      }
+    }
+    .navbarRight {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      .icon {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        color: var(--blue);
+      }
+      .sign {
+        background-color: var(--blue);
+        color: var(--white);
+        padding: 5px 15px;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .navbarBottom {
+    background-color: var(--green);
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navBLeft,
+    .navBRight {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--white);
+      .itemIcon {
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.subhero {
+  padding: 50px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-yellow);
+  font-family: var(--secondary-font);
+  .subheroWrapper {
+    width: 65%;
+    font-size: 3em;
+    letter-spacing: 1px;
+    color: var(--blue);
+    text-align: center;
+    p {
+      font-weight: lighter;
+      color: var(--black);
+    }
+    a {
+      font-weight: lighter;
+      color: var(--blue);
+      font-size: 0.5em;
+    }
+  }
+}
