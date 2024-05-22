@@ -5,14 +5,14 @@ import React from 'react'
 export default function Hero() {
     return (
         <div className='hero'>
-            <div className="heroWrapper">
-                <h3>
-                    ENNYEN  MarketPlace.
-                </h3>
-                <p>Market and sell solar products and services to the world for a greenervearth!</p>
+            <div className="heroContainer">
+                <div className="heroWrapper">
+                    <h3>
+                        ENNYEN  MarketPlace.
+                    </h3>
+                    <p>Market and sell solar products and services to the world for a greenervearth!</p>
 
-                <div className="heroSearch">
-                    <div className="searchRight">
+                    <div className="heroSearch">
                         <select name="category" id="">
                             <option value="solar">solar categories</option>
                         </select>
@@ -25,10 +25,14 @@ export default function Hero() {
                             <option value="location">location</option>
                         </select>
 
-                        <input type="text" placeholder='What have you been looking for...' />
-                    </div>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className='searchIcon' />
+                        <div className="input">
 
+                            <input type="text" placeholder='What have you been looking for...' />
+                            <FontAwesomeIcon icon={faMagnifyingGlass} className='searchIcon' />
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

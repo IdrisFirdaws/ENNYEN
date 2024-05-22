@@ -2,14 +2,18 @@
   position: fixed;
   top: 55px;
   left: 0;
-  width: 100%;
+  width: 100vw;
   border-top: 2px solid var(--blue);
   font-family: var(--secondary-font);
   background-color: var(--white);
   z-index: 1000;
 
+  &.TopbarZero {
+    top: 0; /* New position when Topbar is hidden */
+  }
+
   .navbarTop {
-    height: 92px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,6 +65,9 @@
         border-radius: 20px;
       }
     }
+    .menu-btn {
+      display: none;
+    }
   }
 
   .navbarBottom {
@@ -69,6 +76,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .navBottomTop {
+      display: none;
+    }
+
     .navBLeft,
     .navBRight {
       display: flex;
@@ -79,5 +91,119 @@
         margin-right: 5px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .homeNavbar {
+    .navbarTop {
+      .searchbar {
+        width: 250px;
+      }
+      .navbarRight {
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .homeNavbar {
+    .navbarTop {
+      .navbarRight {
+        display: none;
+      }
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    .navbarBottom {
+      display: none;
+      &.open {
+        display: flex;
+        gap: 60px;
+        flex-direction: column;
+        width: 50%;
+        position: absolute;
+        top: 72px;
+        right: 0;
+        padding: 50px 5%;
+        animation: fade-in 0.3s ease;
+      }
+
+      .navBottomTop {
+        display: block;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        .icon {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          color: var(--blue);
+          background-color: var(--white);
+          border-radius: 20px;
+          padding: 5px 10px;
+        }
+        .sign {
+          background-color: var(--white);
+          color: var(--green);
+          padding: 5px 15px;
+          border-radius: 20px;
+        }
+      }
+
+      .navBLeft,
+      .navBRight {
+        flex-direction: column;
+        .itemIcon {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .homeNavbar {
+    .navbarTop {
+      padding: 0 5% 5px 5%;
+
+      .logo {
+        width: 30%;
+        height: fit-content;
+      }
+      .searchbar {
+        width: 200px;
+      }
+    }
+
+    .navbarBottom {
+      display: none;
+      &.open {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .homeNavbar {
+    .navbarTop {
+      .searchbar {
+        width: 150px;
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

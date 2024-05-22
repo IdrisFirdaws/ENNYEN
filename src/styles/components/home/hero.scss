@@ -1,27 +1,36 @@
 .hero {
-  background-color: var(--light-grey);
-  padding: 90px 10% 100px 10%;
-  .heroWrapper {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    h3,
-    p {
-      font-size: 2.5em;
-      color: var(--white);
-    }
-    .heroSearch {
-      width: 100%;
-      background-color: var(--white);
-      height: fit-content;
-      border-radius: 20px;
-      padding: 2px;
+  background-image: url(./Rectangle_51.png);
+  animation: change 20s infinite ease-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .heroContainer {
+    background-color: var(--black-50);
+    width: 100%;
+    padding: 50px 10% 100px 10%;
+    font-family: var(--primary-font);
+    .heroWrapper {
+      width: 70%;
       display: flex;
-      align-items: center;
-      .searchRight {
+      flex-direction: column;
+      gap: 40px;
+      h3,
+      p {
+        font-size: 2.5em;
+        color: var(--white);
+      }
+      .heroSearch {
+        width: 100%;
+        background-color: var(--white);
+        height: fit-content;
+        border-radius: 20px;
+        padding: 2px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-family: var(--secondary-font);
         padding: 5px 0 5px 10px;
-        width: 97%;
         select {
           padding: 0 10px 0 5px;
           color: var(--light-grey);
@@ -31,23 +40,94 @@
           cursor: pointer;
         }
 
-        input {
-          padding: 0 10px 0 5px;
-          width: 45%;
-          border: none;
-          outline: none;
-          cursor: pointer;
-          ::placeholder {
-            color: var(--v-light-grey);
+        .input {
+          width: 60%;
+          display: flex;
+          align-items: center;
+          input {
+            width: 90%;
+            padding: 0 10px 0 5px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            ::placeholder {
+              color: var(--v-light-grey);
+            }
+          }
+          .searchIcon {
+            padding: 9px;
+            background-color: var(--green);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1em;
           }
         }
       }
-      .searchIcon {
-        padding: 9px;
-        background-color: var(--green);
-        border-radius: 50%;
-        color: var(--white);
-        font-size: 1em;
+    }
+  }
+}
+
+@keyframes change {
+  0%,
+  100% {
+    background-image: url(./Rectangle_51.png);
+  }
+  25% {
+    background-image: url(./Rectangle_53.png);
+  }
+  50% {
+    background-image: url(./Rectangle_74.png);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    .heroWrapper {
+      .heroSearch {
+        flex-wrap: wrap;
+        .input {
+          width: 100%;
+          margin-top: 10px;
+          input {
+            width: 93%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hero {
+    .heroWrapper {
+      width: 90%;
+      .heroSearch {
+        .input {
+          input {
+            width: 93%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero {
+    .heroWrapper {
+      width: 100%;
+      h3,
+      p {
+        font-size: 1.5em;
+      }
+      .heroSearch {
+        flex-direction: column;
+        gap: 20px;
+        .input {
+          input {
+            width: 93%;
+          }
+        }
       }
     }
   }

@@ -1,8 +1,8 @@
-import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 
-export default function Topbar() {
+export default function Topbar({ onClose }) {
     return (
         <div className='topbar'>
             <div className="topbarWrapper">
@@ -17,10 +17,10 @@ export default function Topbar() {
                         <img src="images/equi_solar.png" alt="" className='img4' />
                     </div>
                 </div>
-                <div className="close">
-                    <FontAwesomeIcon icon={faTimesCircle} />
+                <div className="close" onClick={onClose}>
+                    <img src="images/icon/x-octagon.png" alt="" />
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -22,3 +22,31 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .subhero {
+    .subheroWrapper {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .subhero {
+    padding: 50px 5%;
+    .subheroWrapper {
+      width: 100%;
+      font-size: 2em;
+
+      p {
+        font-weight: lighter;
+        color: var(--black);
+      }
+      a {
+        font-weight: lighter;
+        color: var(--blue);
+        font-size: 0.4em;
+      }
+    }
+  }
+}
