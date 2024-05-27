@@ -1,9 +1,8 @@
-import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faBars, faMagnifyingGlass, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
 
-export default function Navbar({ isTopbarVisible }) {
+import React, { useState } from 'react';
+import * as icon from 'react-bootstrap-icons'
+
+export default function ProdCatNavbar() {
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -17,48 +16,62 @@ export default function Navbar({ isTopbarVisible }) {
 
 
     return (
-        <div className={`homeNavbar ${!isTopbarVisible ? 'TopbarZero' : ''}`}>
+        <div className='prodCatNavbar'>
             <div className="navbarTop">
-                <img src="images/logo-green.png" alt="" className='logo' />
-                <div className="searchbar">
-                    <input type="text" placeholder='Search ENNYEN...' />
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className='searchIcon' />
-                </div>
+                <img src="images/logo/logo-white.png" alt="" className='logo' />
+
                 <div className="navbarRight">
-                    <div className="icon">
-                        <img src="images/language_icon.png" alt="" />
-                        <span>ENG</span>
+                    <div className="lang">
+                        <img src="images/icon/ion_language_white.png" alt="" />
+                        <span>ENG - USD</span>
                     </div>
                     <div className="icon">
-                        <FontAwesomeIcon icon={faUser} />
-                        <span>Sign in</span>
+                        <div className="wish">
+                            <icon.Heart />
+                            <span>0</span>
+                        </div>
+                        <div className="text">wish list</div>
+
                     </div>
+                    <div className="icon">
+                        <div className="wish">
+                            <icon.Cart2 />
+                            <span>0</span>
+                        </div>
+                        <div className="text">cart</div>
+
+                    </div>
+
                     <div className="sign">
-                        Sign up
+                        <icon.Person className='icon' />
+
+                        <div className="free">
+                            Sign in
+                            <span>Join ENNYEN for free</span>
+                        </div>
                     </div>
+
                 </div>
                 <div onClick={toggleSidebar} className="menu-btn">
-                    <FontAwesomeIcon icon={sidebarOpen ? faTimes : faBars} className='toggleIcon' />
+                    {sidebarOpen ? <icon.X onClick={toggleSidebar} className='toggle' /> : <icon.List onClick={toggleSidebar} className='toggle' />}
                 </div>
             </div>
             <div className={`navbarBottom ${sidebarOpen ? 'open' : ''}`}>
                 <div className="navBottomTop">
-                    <div className="icon">
-                        <img src="images/language_icon.png" alt="" />
-                        <span>ENG</span>
-                    </div>
-                    <div className="icon">
-                        <FontAwesomeIcon icon={faUser} />
-                        <span>Sign in</span>
-                    </div>
                     <div className="sign">
-                        Sign up
+                        <icon.Person className='icon' />
+
+                        <div className="free">
+                            Sign in
+                            <span>Join ENNYEN for free</span>
+                        </div>
                     </div>
+
                 </div>
                 <div className="navBLeft">
 
                     <div className="item">
-                        <FontAwesomeIcon icon={faBars} className='itemIcon' />
+                        <icon.List className='icon' />
                         All categories
                     </div>
                     <div className="item">
@@ -79,6 +92,10 @@ export default function Navbar({ isTopbarVisible }) {
                         Blog
                     </div>
                     <div className="item">
+                        Help center
+                    </div>
+                    <div className="item">
+                        <icon.Phone className='icon' />
                         Help center
                     </div>
                 </div>

@@ -69,14 +69,20 @@
 
 @keyframes change {
   0%,
-  100% {
+  25% {
     background-image: url(./Rectangle_51.png);
   }
-  25% {
+  30%,
+  45% {
     background-image: url(./Rectangle_53.png);
   }
-  50% {
+  50%,
+  75% {
     background-image: url(./Rectangle_74.png);
+  }
+  90%,
+  100% {
+    background-image: url(./Rectangle_53.png);
   }
 }
 
@@ -102,9 +108,15 @@
     .heroWrapper {
       width: 90%;
       .heroSearch {
+        padding: 5px 10px 5px 10px !important;
+        select {
+          width: 100%;
+          border: none !important;
+        }
         .input {
+          width: 100% !important;
           input {
-            width: 93%;
+            width: 95% !important;
           }
         }
       }
@@ -115,7 +127,7 @@
 @media screen and (max-width: 700px) {
   .hero {
     .heroWrapper {
-      width: 100%;
+      width: 100% !important;
       h3,
       p {
         font-size: 1.5em;
@@ -123,6 +135,7 @@
       .heroSearch {
         flex-direction: column;
         gap: 20px;
+        width: 100% !important;
         .input {
           input {
             width: 93%;

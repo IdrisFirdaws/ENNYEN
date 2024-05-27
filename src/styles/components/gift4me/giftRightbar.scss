@@ -1,0 +1,16 @@
+.giftRightbar {
+  padding: 40px;
+  background-color: var(--v-light-grey);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  .card {
+    background-color: var(--white);
+    border: 1px solid var(--light-grey);
+    min-height: 130px;
+    height: fit-content;
+  }
+  .order {
+    height: 300px;
+  }
+}

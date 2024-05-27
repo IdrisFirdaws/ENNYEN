@@ -1,0 +1,160 @@
+.dashboard {
+  .dashboardTop {
+    margin-bottom: 30px;
+    .welcome {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .right {
+        font-weight: bold;
+        font-size: 1.2em;
+        .name {
+          color: var(--green);
+          text-transform: capitalize;
+        }
+        p {
+          font-size: 0.6em;
+        }
+      }
+      .left {
+        button {
+          padding: 5px 10px;
+          border-radius: 20px;
+          background-color: var(--dark-blue);
+          color: var(--white);
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+          span {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .dashboardBottom {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    .btn1 {
+      padding: 5px 10px;
+      border: 1px solid var(--grey);
+      color: var(--grey);
+      outline: none;
+      cursor: pointer;
+      background-color: var(--white);
+      border-radius: 10px;
+      span {
+        margin-left: 5px;
+      }
+    }
+    .btn2 {
+      padding: 5px 10px;
+      border: 1px solid var(--dark-blue);
+      color: var(--white);
+      outline: none;
+      cursor: pointer;
+      background-color: var(--dark-blue);
+      border-radius: 10px;
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  main {
+    margin-top: 50px;
+    width: 100%;
+
+    .dashboardCards {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-row: repeat (20, 100px);
+      grid-auto-flow: dense;
+      gap: 40px 20px;
+      .card {
+        grid-column: span 2;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        // box-shadow: var(--shadow1);
+        border: 1px solid var(--grey);
+        text-align: center;
+      }
+
+      .lineChart {
+        grid-column: span 5;
+        grid-row: span 10;
+      }
+
+      .doughChart {
+        grid-column: span 3;
+        grid-row: span 10;
+      }
+
+      .table {
+        grid-column: span 4;
+        grid-row: span 6;
+      }
+
+      .mostViewedProd,
+      .bestProd {
+        grid-column: span 3;
+        grid-row: span 6;
+      }
+
+      .prodStats {
+        grid-column: span 2;
+        grid-row: span 6;
+      }
+
+      .smallTable {
+        grid-column: span 4;
+        grid-row: span 10;
+      }
+
+      .rating {
+        grid-column: span 4;
+        grid-row: span 6;
+        padding: 0;
+      }
+
+      .topViewed {
+        grid-column: span 4;
+        grid-row: span 14;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .dashboard {
+    .dashboardTop {
+      .left {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+      }
+    }
+    main {
+      .dashboardCards {
+        .card {
+          grid-column: span 8;
+          .lineChart,
+          .doughChart,
+          .table,
+          .mostProd,
+          .bestProd,
+          .prodStats,
+          .topProd,
+          .rating,
+          .topViewed,
+          .topCtaegory {
+            grid-column: span 8;
+          }
+        }
+      }
+    }
+  }
+}

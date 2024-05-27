@@ -8,7 +8,7 @@ export default function SectionEight() {
                 <p>Break Free from financial Limitations, Unleash Business and Personal Potentials</p>
                 <input type="email" name="" id="" placeholder="your@email.com" />
 
-                <button className="btn">keep me posted</button>
+                <button className="btn1">Keep me posted</button>
             </div>
 
         </div>

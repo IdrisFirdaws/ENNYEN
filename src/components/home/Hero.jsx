@@ -8,7 +8,7 @@ export default function Hero() {
             <div className="heroContainer">
                 <div className="heroWrapper">
                     <h3>
-                        ENNYEN  MarketPlace.
+                        ENNYEN®  MarketPlace.
                     </h3>
                     <p>Market and sell solar products and services to the world for a greenervearth!</p>
 

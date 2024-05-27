@@ -1,14 +1,17 @@
 :root {
   --blue: #2660a3;
-  --blue-100: rgba(188, 206, 226, 1);
+  --blue-300: rgba(110, 148, 193, 1);
+  --blue-100: #bccee2;
   --blue-50: rgba(233, 239, 246, 1);
   --dark-blue: #012247;
+  --blue-600: rgba(35, 87, 148, 1);
   --ligt-blue: #b8b0fd;
   --active-blue: #1800e1;
   --light-green: #13ffc6;
-  --green: rgba(115, 185, 91, 1);
+  --green: #73b95b;
+  --green-900: #304e26;
   // --green: #254e31;
-  --t-green: rgba(37, 78, 49, 0.7);
+  --t-green: #254e31b3;
   --yellow: #f7eb60;
   --light-yellow: #faf5b7;
   --pink: #ff87ff;
@@ -38,6 +41,19 @@ body {
   overflow-x: hidden !important;
   font-family: var(--secondary-font);
   background-color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 0.5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light-grey);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-blue);
+  border-radius: 10px;
 }
 
 .main {
@@ -97,7 +113,6 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-top: 50px;
   .left,
   .right {
     width: 45%;
@@ -149,7 +164,7 @@ body {
 .largeTitle {
   width: 50%;
   font-family: var(--secondary-font);
-  margin-bottom: 10px;
+  margin-bottom: 60px;
   .text {
     font-size: 1em;
     color: var(grey);
@@ -189,6 +204,13 @@ body {
   border-radius: 4px;
 }
 
+.dashboardcardTitle {
+}
+
+//layout
+@import url(layout/dashboardLayout.scss);
+@import url(layout/gift4meLayout.scss);
+
 //components
 
 //heading styles
@@ -198,361 +220,57 @@ body {
 //home component styles
 @import url(components/home/subhero.scss);
 @import url(components/home/hero.scss);
+@import url(components/home/homeSections.scss);
 
-.sectionOne {
-  .content {
-    .sectionTitle {
-      color: var(--dark-blue);
-    }
+//dashboard
+@import url(components/dashboard/dashboardCards.scss);
 
-    .sectionText {
-      color: var(--grey);
-    }
+//gift4me
+@import url(components/gift4me/giftSidebar.scss);
+@import url(components/gift4me/giftRightbar.scss);
 
-    .btn {
-      background-color: var(--blue);
-      color: var(--white);
-    }
+//productCategory
+@import url(components/headings/productCategory/prodCatTopbar.scss);
+@import url(components/headings/productCategory/prodCatNavbar.scss);
+
+//footer
+@import url(components/footer.scss);
+@import url(components/dashboard/dashboard.scss);
+
+.prodCatMain {
+  margin-top: 125px;
+  background-image: url(./components/prodCategory/Rectangle-31.png);
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: changeProd 20s infinite ease-out;
+
+  .heroWrapper {
+    background-color: var(--black-50);
+    width: 100%;
+    height: 100%;
+    // padding: 50px 10% 100px 10%;
+    padding: 50%;
+    font-family: var(--primary-font);
   }
 }
 
-.sectionTwo {
-  .content {
-    .sectionTitle {
-      color: var(--black);
-    }
-
-    .sectionText {
-      color: var(--grey);
-    }
-
-    .btn {
-      background-color: var(--blue);
-      color: var(--white);
-    }
+@keyframes changeProd {
+  0%,
+  25% {
+    background-image: url(./components/prodCategory/Rectangle-31.png);
   }
-}
-
-.slider {
-  height: 300px;
-  margin: auto;
-  position: relative;
-  display: grid;
-  place-items: center;
-  background-color: var(--v-light-grey);
-  overflow-x: hidden;
-
-  .slideTrack {
-    display: flex;
-    gap: 20px;
-    width: calc(250px * 18);
-    animation: scroll 40s linear infinite;
-
-    .slide {
-      height: 200px;
-      width: 200px;
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      border-radius: 4px;
-      background-color: var(--white);
-      flex-direction: column;
-      gap: 10px;
-    }
+  30%,
+  55% {
+    background-image: url(./Rectangle_51.png);
   }
-}
-
-@keyframes scroll {
-  0% {
-    transform: translate(0);
+  60%,
+  85% {
+    background-image: url(./Rectangle_74.png);
   }
+  90%,
   100% {
-    transform: translate(calc(-250px * 9));
-  }
-}
-
-.sectionFour {
-  .photoContent {
-    .left {
-      background-image: url(./Rectangle_51.png);
-      object-fit: cover;
-      height: 574px;
-      border-radius: 10px;
-      display: flex;
-      align-items: last baseline;
-      color: var(--white);
-      overflow: hidden;
-    }
-    .right {
-      display: flex;
-      flex-direction: column;
-      // align-items: center;
-      gap: 20px;
-
-      .top {
-        background-image: url(./Rectangle_74.png);
-        height: 277px;
-        border-radius: 10px;
-        display: flex;
-        align-items: last baseline;
-        color: var(--white);
-        overflow: hidden;
-      }
-      .bottom {
-        height: 277px;
-        background-image: url(./Rectangle_53.png);
-        border-radius: 10px;
-        display: flex;
-        align-items: last baseline;
-        color: var(--white);
-        overflow: hidden;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .sectionFour {
-    .photoContent {
-      .right,
-      .left {
-        width: 75%;
-      }
-    }
-  }
-}
-
-.sectionFive {
-  background-color: var(--v-light-grey);
-  .categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    .box {
-      background: #fff;
-      border-radius: 10px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      text-transform: capitalize;
-      font-weight: bold;
-
-      .images {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        img {
-          width: calc(50% - 5px);
-          height: 100%;
-        }
-      }
-    }
-    .box3 {
-      grid-row: span 2;
-      .images {
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-    .box4 {
-      grid-column: span 2;
-      .images {
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .sectionFive {
-    .box4 {
-      grid-column: span 1 !important;
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .sectionFive {
-    .box3 {
-      grid-row: span 1 !important;
-    }
-  }
-}
-
-.sectionSix {
-  background-color: var(--yellow);
-  padding-bottom: 50px;
-  .section {
-    .largeTitle {
-      .title {
-        color: var(--black-50);
-      }
-    }
-  }
-  .grid {
-    border-top: 1px solid var(--black-50);
-    border-bottom: 1px solid var(--black-50);
-    padding: 0 10%;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    .box {
-      border-left: 1px solid var(--black-50);
-      border-right: 1px solid var(--black-50);
-      padding: 20px 0 0 20px;
-      color: var(--black-50);
-      display: flex;
-      flex-direction: column;
-      .top {
-        width: 80%;
-      }
-      img {
-        height: 200px;
-        align-self: flex-end;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .sectionSix {
-    .grid {
-      grid-template-columns: repeat(1, 1fr);
-
-      .box2 {
-        border-top: 1px solid var(--black-50);
-        border-bottom: 1px solid var(--black-50);
-      }
-    }
-  }
-}
-
-.sectionSeven {
-  .photoContent {
-    display: none;
-    &.active {
-      display: flex;
-    }
-    .left {
-      .rectangle {
-        margin: auto;
-        position: relative;
-        height: 600px;
-        width: 200px;
-        background-color: var(--v-light-grey);
-        .image {
-          position: absolute;
-          top: 75px;
-          left: -85px;
-          padding: 10px 10px 40px 10px;
-          background-color: var(--blue-50);
-          border-radius: 10px;
-          width: 365px;
-
-          img {
-            height: 365px;
-            width: 100%;
-          }
-          .name {
-            margin-top: 10px;
-            text-transform: capitalize;
-            font-weight: bold;
-          }
-          .position {
-            color: var(--blue);
-            font-size: 0.8em;
-          }
-        }
-      }
-    }
-    .right {
-      width: 35%;
-      color: var(--grey);
-      .pagination {
-        display: flex;
-        gap: 10px;
-        .prev,
-        .next {
-          padding: 2px 9px;
-          border: 1px solid var(--grey);
-          cursor: pointer;
-
-          &:hover {
-            background-color: var(--blue);
-            color: var(--white);
-            border: 1px solid var(--blue);
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .sectionSeven {
-    .photoContent {
-      .right {
-        width: 100%;
-        .pagination {
-          justify-content: center;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .sectionSeven {
-    .photoContent {
-      .left {
-        .rectangle {
-          margin: auto;
-          position: relative;
-          height: 600px;
-          width: 180px;
-          background-color: var(--v-light-grey);
-          .image {
-            position: absolute;
-            top: 75px;
-            left: -65px;
-            width: 300px !important;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .sectionSeven {
-    .photoContent {
-      .left {
-        .rectangle {
-          margin: auto;
-          position: relative;
-          height: 600px;
-          width: 150px;
-          background-color: var(--v-light-grey);
-          .image {
-            position: absolute;
-            top: 70px;
-            left: -50px;
-            width: 250px !important;
-            img {
-              height: 300px;
-            }
-          }
-        }
-      }
-    }
+    background-image: url(./Rectangle_51.png);
   }
 }

@@ -9,6 +9,7 @@ import SectionFive from '../components/home/SectionFive'
 import SectionSix from '../components/home/SectionSix'
 import SectionSeven from '../components/home/SectionSeven'
 import SectionEight from '../components/home/SectionEight'
+import Regions from '../components/home/Regions'
 
 export default function Home() {
     return (
@@ -23,7 +24,8 @@ export default function Home() {
             <SectionFive />
             <SectionSix />
             <SectionSeven />
-            {/* <SectionEight /> */}
+            <SectionEight />
+            <Regions />
         </div>
     )
 }

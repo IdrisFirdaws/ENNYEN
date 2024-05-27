@@ -1,0 +1,299 @@
+.dashboardLayout {
+  .navbrand,
+  .dashboardSidebar {
+    width: 16%;
+  }
+
+  .dashboardNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--light-grey);
+    background-color: var(--white);
+    .navbrand {
+      background-color: var(--dark-blue);
+      border: 1px solid var(--dark-blue);
+      padding: 5px 20px;
+      .toggle {
+        color: var(--white);
+        display: none;
+      }
+    }
+    .navRight {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+
+      .icon {
+        width: 30px;
+        margin-right: 100px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .searchbar {
+        width: 300px;
+        background-color: var(--white);
+        border: 1px solid var(--grey);
+        padding: 2px 2px 2px 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-right: 250px;
+        input {
+          padding: 0 5px;
+          width: 90%;
+          border: none;
+          outline: none;
+        }
+        .searchIcon {
+          padding: 7px;
+          background-color: var(--dark-blue);
+          border-radius: 50%;
+          color: var(--white);
+          font-size: 0.9em;
+        }
+      }
+      .notif {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .country {
+          width: 30px;
+          img {
+            width: 100%;
+          }
+        }
+
+        .globe,
+        .notification,
+        .messages,
+        .settings {
+          font-size: 1.1em;
+          color: var(--grey);
+          position: relative;
+          span {
+            position: absolute;
+            top: -5px;
+            right: -6px;
+            font-size: 0.5em;
+            background-color: var(--green);
+            border-radius: 50%;
+            padding: 2px 4px 1px 4px;
+            text-align: center;
+            color: var(--white);
+          }
+        }
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .name {
+            text-transform: capitalize;
+            font-weight: bold;
+          }
+          .position {
+            font-size: 0.8em;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+
+  .dashboardContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    margin-top: 78px;
+    .dashboardSidebar {
+      z-index: 999;
+      background-color: var(--dark-blue);
+      position: fixed;
+      top: 78px;
+      left: 0;
+      color: var(--white);
+      height: calc(100vh - 78px);
+      overflow-y: auto;
+
+      .nav {
+        padding: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 30px;
+        margin-bottom: 500px;
+        a {
+          color: var(--light-grey);
+          text-decoration: none;
+          text-transform: capitalize;
+          span {
+            margin-left: 15px;
+          }
+
+          &.active {
+            color: var(--white);
+          }
+        }
+      }
+
+      .logout {
+        margin-bottom: 500px;
+        padding: 10px 40px;
+        border-top: 2px solid var(--light-grey);
+      }
+    }
+
+    .dashboardMain {
+      margin-left: 220px;
+      width: 100%;
+      padding: 40px 40px 20px 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboardLayout {
+    .navbrand,
+    .dashboardSidebar {
+      width: 20%;
+    }
+
+    .dashboardNavbar {
+      .navRight {
+        padding: 0 20px;
+        .icon {
+          margin-right: 10px;
+          img {
+            width: 100%;
+          }
+        }
+        .searchbar {
+          margin-right: 50px;
+        }
+      }
+    }
+
+    .dashboardContent {
+      .dashboardMain {
+        margin-left: 0;
+        width: 100%;
+        padding: 40px 40px 20px 20px;
+      }
+    }
+  }
+
+  .dashboardLayout {
+    .dashboardSidebar {
+      display: none;
+
+      &.open {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .dashboardLayout {
+    .navbrand,
+    .dashboardSidebar {
+      width: 25%;
+    }
+
+    .dashboardNavbar {
+      .navRight {
+        padding: 0 10px;
+        .icon {
+          margin-right: 10px;
+        }
+
+        .searchbar {
+          margin-right: 10px;
+          width: 200px;
+        }
+        .notif {
+          gap: 10px;
+          .user {
+            gap: 5px;
+            img {
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .dashboardLayout {
+    .navbrand,
+    .dashboardSidebar {
+      width: 100%;
+    }
+
+    .dashboardNavbar {
+      flex-wrap: wrap;
+
+      .navbrand {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .toggle {
+          display: block;
+          justify-self: end;
+          align-self: flex-end;
+          font-size: 2.5em;
+        }
+      }
+
+      .navRight {
+        padding: 5px 10px;
+        .icon {
+          display: none;
+        }
+
+        .searchbar {
+          width: 140px;
+        }
+
+        .notif {
+          .globe,
+          .country {
+            display: none;
+          }
+          .user {
+            .name,
+            .position {
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+    }
+
+    .dashboardContent {
+      margin-top: 120px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dashboardLayout {
+    .searchbar {
+      width: 120px;
+    }
+  }
+}
